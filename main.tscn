@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dhebvkkn3752d"]
+
+[ext_resource type="Script" uid="uid://c88wka6fbtw1m" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://qwrpgn3o7cgv" path="res://ground.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://rkakkgx2x02m" path="res://bird.tscn" id="2_0xm2m"]
+
+[node name="Main" type="Node" unique_id=3591357]
+script = ExtResource("1_1bvp3")
+
+[node name="Ground" parent="." unique_id=1904747249 instance=ExtResource("1_ig7tw")]
+
+[node name="Bird" parent="." unique_id=1487104030 instance=ExtResource("2_0xm2m")]
+position = Vector2(265, 244)
+
+[node name="PipeSpawner" type="Timer" parent="." unique_id=1051724583]
+wait_time = 2.0
+autostart = true
+
+[node name="Pipes" type="Node" parent="." unique_id=1357539648]
+
+[node name="Coins" type="Node" parent="." unique_id=998987962]
+
+[node name="Score" type="TextEdit" parent="." unique_id=345841581]
+offset_left = 209.0
+offset_top = 100.0
+offset_right = 297.0
+offset_bottom = 186.0
+
+[connection signal="bird_collided" from="Bird" to="." method="_on_bird_bird_collided"]
+[connection signal="timeout" from="PipeSpawner" to="." method="_on_pipe_spawner_timeout"]

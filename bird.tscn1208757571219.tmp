@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://rkakkgx2x02m"]
+
+[ext_resource type="Script" uid="uid://ck07id2ddn5en" path="res://bird.gd" id="1_3udoi"]
+[ext_resource type="Texture2D" uid="uid://drip7uqjsilvp" path="res://icon.svg" id="2_8an33"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3udoi"]
+size = Vector2(38, 38)
+
+[node name="Bird" type="CharacterBody2D" unique_id=1487104030]
+script = ExtResource("1_3udoi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2019449341]
+shape = SubResource("RectangleShape2D_3udoi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=157274805]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_8an33")

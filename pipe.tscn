@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cat56hxvkr6xj"]
+
+[ext_resource type="Script" uid="uid://bjc7svm0emmid" path="res://pipe.gd" id="1_bepn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj7mh"]
+size = Vector2(39, 648)
+
+[node name="Pipe" type="AnimatableBody2D" unique_id=245563810]
+collision_mask = 2
+sync_to_physics = false
+script = ExtResource("1_bepn3")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=497938325]
+position = Vector2(9.5, 334)
+shape = SubResource("RectangleShape2D_sj7mh")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D" unique_id=263926426]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -324.0
+offset_right = 20.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2509804, 0.78431374, 0.32941177, 1)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=593342633]
+rect = Rect2(-11, -10, 41, 20)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

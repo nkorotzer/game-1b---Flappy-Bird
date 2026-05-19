@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bwl3xosp81ql"]
+
+[ext_resource type="Script" uid="uid://c0vygdb8pli6b" path="res://coin.gd" id="1_d5gmh"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_d5gmh"]
+b = Vector2(0, 125)
+
+[node name="Coin" type="AnimatableBody2D" unique_id=762276785]
+collision_layer = 4
+collision_mask = 4
+sync_to_physics = false
+script = ExtResource("1_d5gmh")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1612302453]
+shape = SubResource("SegmentShape2D_d5gmh")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D" unique_id=462153602]
+visible = false
+offset_left = -4.0
+offset_right = 3.0
+offset_bottom = 125.0
+color = Color(1, 0, 1, 1)
